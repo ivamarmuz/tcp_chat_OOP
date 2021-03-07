@@ -1,5 +1,6 @@
 #include <sys/select.h>
 #include <errno.h>
+#include <stdio.h>
 
 #include "EventSelector.h"
 
@@ -57,6 +58,7 @@ bool EventSelector::Remove(FdHandler *h)
 void EventSelector::Run()
 {
     quit_flag = false;
+    
     do {
         int i;
         fd_set rds, wrs;
